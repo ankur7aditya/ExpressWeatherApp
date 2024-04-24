@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather APP</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="nav-left">
+            <div class="nav-webApp-name">Ankur Aditya</div>
+        </div>
+        <div class="nav-right">
+            <div class="nav-home"><a href="/">Home</a></div>
+            <div class="nav-weather"><a href="/weather.hbs">Weather</a></div>
+            <div class="nav-about"><a href="/about.hbs">About Us</a></div>
+        </div>
+    </div>
+
+    <div class="weather">
+        <div class="weather-search">
+            <input type="text" name="" class="city-name js-city-name" placeholder="Enter your city name">
+            <input type="submit" value="Search" class="js-submit submit">
+        </div>
+        <div class="weather-result-area">
+            <div class="weather-dayDate">
+                <div class="day"></div>
+                <div class="date"></div>
+            </div>
+            <div class="weather-cityCountry">Get output here</div>
+            <div class="weather-tempInfo">
+                <p class="temperature"></p>
+                <p class="temp-about"></p>
+            </div>
+        </div>
+    </div>
+    <script src="./js/main-weather.js"></script>
+</body>
+
+</html>

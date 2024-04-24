@@ -1,0 +1,393 @@
+/* background-color: #1e272e;
+color:#0097e6; */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e272e;
+    color: rgba(255, 255, 255, 0.75);
+    height: 10vh;
+    padding: 0 2% 0 2%;
+}
+
+.nav-right {
+    display: flex;
+    gap: 3rem;
+}
+
+.nav-webApp-name,
+.nav-home,
+.nav-weather,
+.nav-about {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.nav-webApp-name:hover,
+.nav-home:hover,
+.nav-weather:hover,
+.nav-about:hover {
+    cursor: pointer;
+    color: #0097e6;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #0097e6;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .home-left {
+        padding-top: 10%;
+        padding-left: 8%;
+        padding-bottom: 10%;
+    }
+}
+
+@media screen and (min-width:601px) {
+    .home-hero-section {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .home-left {
+        padding-top: 40%;
+        padding-left: 8%;
+    }
+}
+
+
+/* Home page CSS */
+.home-hero-section {
+    display: grid;
+    height: 90vh;
+}
+
+/* left side home page */
+
+
+.welcome {
+    font-size: 1.4rem;
+}
+
+.working {
+    font-size: 2rem;
+    margin: 2% 0;
+}
+
+.working span {
+    color: #0097e6;
+}
+
+.home-check-btn {
+    background-color: #d6d2cd;
+    border: 2px solid #0097e6;
+    width: 30%;
+    height: 6vh;
+    border-radius: 10rem;
+    font-size: 1.2rem;
+}
+
+.home-check-btn a {
+    background-color: #d6d2cd;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.home-check-btn a:hover {
+    color: #0097e6;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+.home-check-btn a:active {
+    color: #0097e6;
+    background-color: rgb(180, 176, 171);
+    cursor: pointer;
+}
+
+/* Styles for the slideshow container right side */
+.slideshow-container {
+    max-width: 800px;
+    position: relative;
+    margin: auto;
+    border: 2px solid #0097e6;
+    border-radius: 50px;
+}
+
+/* Styles for the slides */
+.slide {
+    display: none;
+}
+
+.slide img {
+
+    max-width: 100%;
+    height: 50vh;
+
+}
+
+/* Navigation buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+/* Hover effect on navigation buttons */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Weather Page CSS */
+.weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3%;
+}
+
+.weather-search {
+    width: 85%;
+    height: 8vh;
+    position: relative;
+}
+
+.weather-search .city-name {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 5rem;
+    background-color: #1e272e;
+    box-shadow: -4px 4px 10px rgba(2, 2, 2, 0.8);
+    color: white;
+
+    position: absolute;
+    left: 0%;
+    top: 0%;
+}
+
+.weather-search .submit {
+    position: absolute;
+    right: 0%;
+
+    height: 100%;
+    border-radius: 5rem;
+    cursor: pointer;
+}
+
+.weather-search .submit:hover {
+    background-color: #0097e6;
+    color: black;
+}
+
+.weather-result-area {
+    margin-top: 5%;
+    width: 50%;
+}
+
+.weather-dayDate {
+    display: flex;
+
+    justify-content: space-between;
+    background-color: rgb(30, 39, 46);
+    color: rgb(146, 144, 144);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 10vh;
+    align-items: center;
+}
+
+.weather-cityCountry {
+
+    height: 25vh;
+    background-color: rgba(30, 39, 46, 0.9);
+    align-items: center;
+    color: rgb(146, 144, 144);
+}
+
+.weather-tempInfo {
+    display: flex;
+    justify-content: space-between;
+    height: 25vh;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgba(30, 39, 46, 0.9);
+    align-items: center;
+
+    color: rgb(146, 144, 144);
+}
+
+@media screen and (max-width:600px) {
+    .weather-search .submit {
+        width: 30%;
+        font-size: 0.9rem;
+    }
+
+    .weather-search .city-name {
+        font-size: 0.8rem;
+
+    }
+
+    .weather-dayDate {
+        font-size: 1.5rem;
+    }
+
+    .weather-cityCountry {
+        font-size: 1.8rem;
+    }
+
+    .weather-tempInfo {
+        font-size: 2.3rem;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width :601px) {
+
+    .weather-search .submit {
+        width: 10%;
+        font-size: 1.2rem;
+    }
+
+    .weather-search .city-name {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .weather-dayDate {
+        font-size: 2rem;
+    }
+
+    .weather-cityCountry {
+        font-size: 3.2rem;
+    }
+
+    .weather-tempInfo {
+        font-size: 3.5rem;
+    }
+}
+
+
+/* About Us page CSS */
+.about-us {
+    width: 100%;
+    height: 100vh;
+
+}
+
+
+.about-img {
+    border-radius: 4px;
+}
+
+.about-desc {
+    background-color: rgba(0, 151, 230, 0.4);
+}
+
+@media screen and (max-width: 600px) {
+    .about-head {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .about-img,
+    .about-desc {
+        width: 95%;
+        margin-left: 2.5%;
+    }
+
+    .about-desc {
+        font-size: 2rem;
+        color: rgba(0, 0, 0, 0.8);
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .about-head {
+        font-size: 5rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .about-img-desc {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .about-img {
+        width: 50%;
+        height: 65%;
+    }
+
+    .about-desc {
+        font-size: 2.8rem;
+        color: rgba(0, 0, 0, 0.8);
+        text-align: center;
+        padding-top: 10%;
+    }
+}
+
+
+
+/* Error 404 webpage CSS */
+.img-404 {
+    width: 100%;
+    height: 100vh;
+}
+
+.btn-404 {
+    height: 5rem;
+    width: 10rem;
+    color: white;
+    background-color: rgba(4, 118, 248, 0.911);
+    border: none;
+    border-radius: 5rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.css404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

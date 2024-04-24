@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="nav-left">
+            <div class="nav-webApp-name">Ankur Aditya</div>
+        </div>
+        <div class="nav-right">
+            <div class="nav-home"><a href="./">Home</a></div>
+            <div class="nav-weather"><a href="./weather.hbs">Weather</a></div>
+            <div class="nav-about"><a href="./about.hbs">About Us</a></div>
+        </div>
+    </div>
+
+    <div class="home-hero-section">
+        <div class="home-left">
+            <p class="welcome">Welcome to weather app</p>
+            <p class="working">Get The Latest <span>Weather</span>Info Of Your City</p>
+            <button class="home-check-btn"><a href="/weather.hbs">Check Now</a></button>
+        </div>
+
+        <div class="slideshow-container">
+            <div class="slide fade image1">
+                <img src="https://static.wixstatic.com/media/c0f959_5146483869094f1c872651dbc557c2f8~mv2.png/v1/fill/w_344,h_193,al_c,lg_1,q_85,enc_auto/c0f959_5146483869094f1c872651dbc557c2f8~mv2.png"
+                    alt="Image 1">
+            </div>
+            <div class="slide fade image2">
+                <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--NC_OIkwT--/c_imagga_scale,f_auto,fl_progressive,h_1080,q_auto,w_1080/https://thepracticaldev.s3.amazonaws.com/i/gfaip0xbfia05oa7kve6.png"
+                    alt="Image 2">
+            </div>
+            <div class="slide fade image3">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_4ZlfUlTvSDZBYE7fTpQpESB-9_hEcitZdSseF-tdrmvuvHCam72KqnK7tSoA68Uce7g&usqp=CAU"
+                    alt="Image 3">
+            </div>
+
+            <!-- Add more slides as needed -->
+
+            <!-- Navigation buttons -->
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+
+    </div>
+    <script>
+        let currentSlide = 0;
+
+        // Function to change the slide
+        function changeSlide(n) {
+            showSlide(currentSlide += n);
+        }
+
+        // Function to display the current slide
+        function showSlide(n) {
+            const slides = document.getElementsByClassName("slide");
+
+            // Loop back to the first slide if at the end
+            if (n >= slides.length) {
+                currentSlide = 0;
+            } else if (n < 0) {
+                currentSlide = slides.length - 1;
+            } else {
+                currentSlide = n;
+            }
+
+            // Hide all slides
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            // Display the current slide
+            slides[currentSlide].style.display = "block";
+        }
+
+        // Automatically advance to the next slide every 2 seconds
+        setInterval(() => {
+            changeSlide(1);
+        }, 4000);
+
+        // Display the initial slide
+        showSlide(currentSlide);
+
+    </script>
+</body>
+
+</html>
